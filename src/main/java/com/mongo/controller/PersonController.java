@@ -16,6 +16,11 @@ public class PersonController {
 	@Autowired
 	private PersonRepository personRepo;
 	
+	@RequestMapping(value = "/test")
+	public String test() {
+		return "test";
+	}
+	
 	@RequestMapping(value = "/getPerson/{firstname}", method = RequestMethod.GET)
 	public Person getPersonByFirstname(@PathVariable String firstname) {
 		Person person = personRepo.findByFirstname(firstname);
