@@ -5,7 +5,7 @@ spring:
     mongodb:
       host: 172.17.0.7
       port: 27017
-      database: sampledb
+      database: SampleMongodb
       username: admin
       password: secret
 
