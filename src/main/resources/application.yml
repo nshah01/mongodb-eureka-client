@@ -3,7 +3,7 @@ spring:
     name: springDataMongodbExample
   data:
     mongodb:
-      host: mongodb #172.17.0.7 
+      host: 172.17.0.7 
       port: 27017
       database: SampleMongodb
       username: admin
