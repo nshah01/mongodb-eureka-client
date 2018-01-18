@@ -43,8 +43,10 @@ public class PersonController {
 		
 	}
 	
-	public String getFallback() {
-		return "Circuit is open as db is down!";
+	public Person getFallback() {
+		Person person = personRepo.findByFirstname("Dummy");
+		System.out.println("======================= Fallback Response ====================="+person);
+		return person;
 		
 	}
 }
