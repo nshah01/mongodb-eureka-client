@@ -22,6 +22,7 @@ public class PersonController {
 	}
 	
 	@RequestMapping(value = "/getPerson/{firstname}", method = RequestMethod.GET)
+	@HystrixCommand(fallbackMethod = "getFallback")
 	public Person getPersonByFirstname(@PathVariable String firstname) {
 		Person person = personRepo.findByFirstname(firstname);
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + person);
@@ -39,6 +40,11 @@ public class PersonController {
 	@RequestMapping(value = "/create" ,method = RequestMethod.POST)
 	public Person createPerson(@RequestBody Person person) {
 		return personRepo.save(person);
+		
+	}
+	
+	public String getFallback() {
+		return "Circuit is open as db is down!";
 		
 	}
 }
