@@ -10,8 +10,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableCircuitBreaker
 @EnableDiscoveryClient
+@EnableCircuitBreaker
+@EnableAutoConfiguration
 public class SpringDataMongoDbExampleApplication {
 
 	public static void main(String[] args) {
